@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603C4998D957C148BEFACB90 /* Pods_Final_Test_BMI_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3C0DB4AA01D584BE08A933 /* Pods_Final_Test_BMI_App.framework */; };
 		B64693F42583133500C2F8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64693F32583133500C2F8AD /* AppDelegate.swift */; };
 		B64693F62583133500C2F8AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64693F52583133500C2F8AD /* SceneDelegate.swift */; };
-		B64693F82583133500C2F8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64693F72583133500C2F8AD /* ViewController.swift */; };
-		B64693FB2583133500C2F8AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64693F92583133500C2F8AD /* Main.storyboard */; };
 		B64693FD2583133500C2F8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64693FC2583133500C2F8AD /* Assets.xcassets */; };
 		B64694002583133500C2F8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64693FE2583133500C2F8AD /* LaunchScreen.storyboard */; };
+		B65D5D37258332690004565D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D36258332690004565D /* ViewController.swift */; };
+		B65D5D41258334290004565D /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D40258334290004565D /* CalculatorLogic.swift */; };
+		B65D5D44258338CC0004565D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D3B2583327F0004565D /* Main.storyboard */; };
+		B65D5D5625833AAE0004565D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D5525833AAE0004565D /* Constants.swift */; };
+		B65D5D5925833C1C0004565D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D5825833C1C0004565D /* GoogleService-Info.plist */; };
+		B65D5D5C25833E3A0004565D /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D5B25833E3A0004565D /* TrackingViewController.swift */; };
+		B65D5D64258432C30004565D /* BmiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D62258432C30004565D /* BmiCell.swift */; };
+		B65D5D65258432C30004565D /* BmiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D63258432C30004565D /* BmiCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230776ED06E2685B51DBA7F1 /* Pods-Final Test BMI App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Test BMI App.release.xcconfig"; path = "Target Support Files/Pods-Final Test BMI App/Pods-Final Test BMI App.release.xcconfig"; sourceTree = "<group>"; };
+		5218C11C51E393908A3F18A5 /* Pods-Final Test BMI App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Test BMI App.debug.xcconfig"; path = "Target Support Files/Pods-Final Test BMI App/Pods-Final Test BMI App.debug.xcconfig"; sourceTree = "<group>"; };
+		7C3C0DB4AA01D584BE08A933 /* Pods_Final_Test_BMI_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Test_BMI_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64693F02583133500C2F8AD /* Final Test BMI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Test BMI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64693F32583133500C2F8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64693F52583133500C2F8AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B64693F72583133500C2F8AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B64693FA2583133500C2F8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B64693FC2583133500C2F8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B64693FF2583133500C2F8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64694012583133500C2F8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B65D5D36258332690004565D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B65D5D3B2583327F0004565D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B65D5D40258334290004565D /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
+		B65D5D5525833AAE0004565D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B65D5D5825833C1C0004565D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B65D5D5B25833E3A0004565D /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		B65D5D62258432C30004565D /* BmiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCell.swift; sourceTree = "<group>"; };
+		B65D5D63258432C30004565D /* BmiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BmiCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603C4998D957C148BEFACB90 /* Pods_Final_Test_BMI_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F8F2D818EAF991AE60EE03F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3C0DB4AA01D584BE08A933 /* Pods_Final_Test_BMI_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B64693E72583133400C2F8AD = {
 			isa = PBXGroup;
 			children = (
 				B64693F22583133500C2F8AD /* Final Test BMI App */,
 				B64693F12583133500C2F8AD /* Products */,
+				CD6018E614DAAC8F5537F2C8 /* Pods */,
+				6F8F2D818EAF991AE60EE03F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +83,54 @@
 		B64693F22583133500C2F8AD /* Final Test BMI App */ = {
 			isa = PBXGroup;
 			children = (
+				B65D5D3F258334100004565D /* Models */,
 				B64693F32583133500C2F8AD /* AppDelegate.swift */,
 				B64693F52583133500C2F8AD /* SceneDelegate.swift */,
-				B64693F72583133500C2F8AD /* ViewController.swift */,
-				B64693F92583133500C2F8AD /* Main.storyboard */,
+				B65D5D35258332100004565D /* Controllers */,
+				B65D5D34258332060004565D /* Views */,
 				B64693FC2583133500C2F8AD /* Assets.xcassets */,
 				B64693FE2583133500C2F8AD /* LaunchScreen.storyboard */,
+				B65D5D5525833AAE0004565D /* Constants.swift */,
 				B64694012583133500C2F8AD /* Info.plist */,
+				B65D5D5825833C1C0004565D /* GoogleService-Info.plist */,
+				B65D5D62258432C30004565D /* BmiCell.swift */,
+				B65D5D63258432C30004565D /* BmiCell.xib */,
 			);
 			path = "Final Test BMI App";
+			sourceTree = "<group>";
+		};
+		B65D5D34258332060004565D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B65D5D3B2583327F0004565D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B65D5D35258332100004565D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B65D5D36258332690004565D /* ViewController.swift */,
+				B65D5D5B25833E3A0004565D /* TrackingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B65D5D3F258334100004565D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B65D5D40258334290004565D /* CalculatorLogic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD6018E614DAAC8F5537F2C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5218C11C51E393908A3F18A5 /* Pods-Final Test BMI App.debug.xcconfig */,
+				230776ED06E2685B51DBA7F1 /* Pods-Final Test BMI App.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B64694042583133500C2F8AD /* Build configuration list for PBXNativeTarget "Final Test BMI App" */;
 			buildPhases = (
+				23568B14393CA56DF32EF2A8 /* [CP] Check Pods Manifest.lock */,
 				B64693EC2583133500C2F8AD /* Sources */,
 				B64693ED2583133500C2F8AD /* Frameworks */,
 				B64693EE2583133500C2F8AD /* Resources */,
+				8F07A6E04150544FC561E012 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,19 +193,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64694002583133500C2F8AD /* LaunchScreen.storyboard in Resources */,
+				B65D5D5925833C1C0004565D /* GoogleService-Info.plist in Resources */,
 				B64693FD2583133500C2F8AD /* Assets.xcassets in Resources */,
-				B64693FB2583133500C2F8AD /* Main.storyboard in Resources */,
+				B65D5D44258338CC0004565D /* Main.storyboard in Resources */,
+				B65D5D65258432C30004565D /* BmiCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23568B14393CA56DF32EF2A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Final Test BMI App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F07A6E04150544FC561E012 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Final Test BMI App/Pods-Final Test BMI App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Final Test BMI App/Pods-Final Test BMI App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Final Test BMI App/Pods-Final Test BMI App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B64693EC2583133500C2F8AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B64693F82583133500C2F8AD /* ViewController.swift in Sources */,
+				B65D5D5625833AAE0004565D /* Constants.swift in Sources */,
+				B65D5D64258432C30004565D /* BmiCell.swift in Sources */,
+				B65D5D41258334290004565D /* CalculatorLogic.swift in Sources */,
+				B65D5D37258332690004565D /* ViewController.swift in Sources */,
+				B65D5D5C25833E3A0004565D /* TrackingViewController.swift in Sources */,
 				B64693F42583133500C2F8AD /* AppDelegate.swift in Sources */,
 				B64693F62583133500C2F8AD /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +262,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B64693F92583133500C2F8AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B64693FA2583133500C2F8AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B64693FE2583133500C2F8AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +391,7 @@
 		};
 		B64694052583133500C2F8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5218C11C51E393908A3F18A5 /* Pods-Final Test BMI App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +411,7 @@
 		};
 		B64694062583133500C2F8AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 230776ED06E2685B51DBA7F1 /* Pods-Final Test BMI App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

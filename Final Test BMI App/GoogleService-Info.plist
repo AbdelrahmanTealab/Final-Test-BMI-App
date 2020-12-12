@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>244260355989-qs4uad0jh13d489oev5m4pv2rmbnk6nu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.244260355989-qs4uad0jh13d489oev5m4pv2rmbnk6nu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDr8f-wyC1KGeAPFlP_bGHZHMFjxLWF8IU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>244260355989</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>abdelrahmantealab.github.io.Final-Test-BMI-App</string>
+	<key>PROJECT_ID</key>
+	<string>todo-list-app-93240</string>
+	<key>STORAGE_BUCKET</key>
+	<string>todo-list-app-93240.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:244260355989:ios:8236791112fc14d30f409c</string>
+	<key>DATABASE_URL</key>
+	<string>https://todo-list-app-93240.firebaseio.com</string>
+</dict>
+</plist>
