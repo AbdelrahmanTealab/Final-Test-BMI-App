@@ -26,7 +26,6 @@ class AddingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         loadDate()
         }
     
@@ -38,12 +37,32 @@ class AddingViewController: UIViewController {
                 } else{
                     for document in querySnapshot!.documents {
                         let data = document.data()
-                        if let entryName = data["name"] as? String,let entryAge = data["age"] as? Int,let entryGender = data["gender"] as? String,let entryHeight = data["height"] as? Float{
+                        if let entryName = data["name"] as? String,let entryAge = data["age"] as? Int,let entryGender = data["gender"] as? String,let entryHeight = data["height"] as? Float,let entryImperial = data["imperial"] as? Bool{
 
                             DispatchQueue.main.async {
                                 self.nameField.placeholder = entryName
                                 self.ageField.placeholder = String(entryAge)
                                 self.genderField.placeholder = entryGender
+                                if(entryImperial){
+                                    self.heightUnit = "in"
+                                    self.weightUnit = "lb"
+                                    self.weightLabel.text = "\(String(format: "%.0f",self.weightSlider.value))\(self.weightUnit)"
+                                    self.heightLabel.text = "\(String(format: "%.0f",self.heightSlider.value))\(self.heightUnit)"
+                                    self.heightSlider.minimumValue = 0
+                                    self.heightSlider.maximumValue = 118.11
+                                    self.weightSlider.minimumValue = 0
+                                    self.weightSlider.maximumValue = 440.925
+                                }
+                                else{
+                                    self.heightUnit = "m"
+                                    self.weightUnit = "kg"
+                                    self.weightLabel.text = "\(String(format: "%.0f",self.weightSlider.value))\(self.weightUnit)"
+                                    self.heightLabel.text = "\(String(format: "%.0f",self.heightSlider.value))\(self.heightUnit)"
+                                    self.heightSlider.minimumValue = 0
+                                    self.heightSlider.maximumValue = 3
+                                    self.weightSlider.minimumValue = 0
+                                    self.weightSlider.maximumValue = 200
+                                }
                                 self.heightSlider.value = entryHeight
                                 self.heightLabel.text = "\(String(format: "%.2f",self.heightSlider.value))\(self.heightUnit)"                           }
                         }
@@ -64,7 +83,7 @@ class AddingViewController: UIViewController {
         let gender = genderField.placeholder!
         let weight = weightSlider.value
         let height = heightSlider.value
-        calculatorLogic.generateEntry(height, weight, name, age, gender)
+        calculatorLogic.generateEntry(height, weight, name, age, gender, false)
         
         self.dismiss(animated: true, completion: nil)
     }

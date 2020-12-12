@@ -14,7 +14,7 @@ struct Database {
 
     func storeEntry(_ entry:Entry) {
 
-        db.collection(K.collectionName).addDocument(data: ["name":entry.name,"age":entry.age,"gender":entry.gender,"weight":entry.weight,"height":entry.height,"bmi":entry.bmi,"date":entry.date]){(error) in
+        db.collection(K.collectionName).addDocument(data: ["name":entry.name,"age":entry.age,"gender":entry.gender,"weight":entry.weight,"height":entry.height,"bmi":entry.bmi,"date":entry.date,"imperial":entry.imperial]){(error) in
             if let e = error{
                 print("error saving data: \(e)")
             }
@@ -22,7 +22,7 @@ struct Database {
                 print("data saved successfully")
             }
         }
-        db.collection(K.lastCollectionName).document("lastbmi").setData(["name":entry.name,"age":entry.age,"gender":entry.gender,"height":entry.height]){(error) in
+        db.collection(K.lastCollectionName).document("lastbmi").setData(["name":entry.name,"age":entry.age,"gender":entry.gender,"height":entry.height,"imperial":entry.imperial]){(error) in
             if let e = error{
                 print("error saving data: \(e)")
             }
@@ -37,8 +37,13 @@ struct CalculatorLogic{
     var entry:Entry?
     var database = Database()
 
-    mutating func generateEntry(_ height:Float,_ weight:Float,_ name:String,_ age:Int,_ gender:String){
-        let bmiValue = weight/pow(height, 2)
+    mutating func generateEntry(_ height:Float,_ weight:Float,_ name:String,_ age:Int,_ gender:String,_ imperial:Bool){
+        
+        var bmiValue = weight/pow(height, 2)
+        
+        if imperial {
+            bmiValue = (weight*703)/pow(height, 2)
+        }
         
         let formatter = DateFormatter()
         var date = ""
@@ -47,7 +52,7 @@ struct CalculatorLogic{
         formatter.timeStyle = .short
         date = formatter.string(from: Date())
         
-        entry = Entry(date: date,name: name, age: age, gender: gender, weight: weight, height: height,bmi: bmiValue)
+        entry = Entry(date: date,name: name, age: age, gender: gender, weight: weight, height: height,bmi: bmiValue, imperial: imperial)
         database.storeEntry(entry!)
     }
     
@@ -124,8 +129,9 @@ struct Entry {
     let weight:Float
     let height:Float
     let bmi:Float
+    let imperial:Bool
 
-    internal init(date: String, name: String, age: Int, gender: String, weight: Float, height: Float, bmi: Float) {
+    internal init(date: String, name: String, age: Int, gender: String, weight: Float, height: Float, bmi: Float, imperial:Bool) {
         self.date = date
         self.name = name
         self.age = age
@@ -133,5 +139,6 @@ struct Entry {
         self.weight = weight
         self.height = height
         self.bmi = bmi
+        self.imperial = imperial
     }
 }

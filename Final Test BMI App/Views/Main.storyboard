@@ -107,6 +107,9 @@
                                                         <rect key="frame" x="59" y="0.0" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.51564592119999997" green="0.32562112809999999" blue="0.32548362019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="thumbTintColor" red="0.43684607739999998" green="0.16498750449999999" blue="0.16469159720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <connections>
+                                                            <action selector="unitChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6UN-9O-xWw"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Imperial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-wY-mCt">
                                                         <rect key="frame" x="119" y="0.0" width="59.5" height="31"/>
@@ -253,7 +256,7 @@
                         <outlet property="genderField" destination="0jb-h9-l32" id="RI9-rG-PQ0"/>
                         <outlet property="heightLabel" destination="X3V-Dj-GUO" id="LJp-Fq-3BG"/>
                         <outlet property="heightSlider" destination="EQt-Kw-SjD" id="us4-PE-U3l"/>
-                        <outlet property="metricSwitch" destination="i15-UA-M6P" id="56X-9i-n1O"/>
+                        <outlet property="imperial" destination="i15-UA-M6P" id="56X-9i-n1O"/>
                         <outlet property="nameField" destination="Dgi-Sp-Env" id="TG2-N7-F7W"/>
                         <outlet property="weightLabel" destination="X4K-pd-S54" id="drf-XL-OWz"/>
                         <outlet property="weightSlider" destination="2NO-dK-Ovx" id="P4Y-wu-KHI"/>

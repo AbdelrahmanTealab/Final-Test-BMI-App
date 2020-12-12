@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var genderField: UITextField!
     
-    @IBOutlet weak var metricSwitch: UISwitch!
+    @IBOutlet weak var imperial: UISwitch!
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var heightSlider: UISlider!
@@ -33,7 +33,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func unitChanged(_ sender: UISwitch) {
+        if !sender.isOn {
+            heightUnit = "m"
+            weightUnit = "Kg"
+            heightLabel.text = "\(String(format: "%.2f",heightSlider.value))\(heightUnit)"
+            weightLabel.text = "\(String(format: "%.0f",weightSlider.value))\(weightUnit)"
+            heightSlider.minimumValue = 0
+            heightSlider.maximumValue = 3
+            weightSlider.minimumValue = 0
+            weightSlider.maximumValue = 200
+        }
+        else{
+            heightUnit = "in"
+            weightUnit = "lb"
+            heightLabel.text = "\(String(format: "%.2f",heightSlider.value))\(heightUnit)"
+            weightLabel.text = "\(String(format: "%.0f",weightSlider.value))\(weightUnit)"
+            heightSlider.minimumValue = 0
+            heightSlider.maximumValue = 118.11
+            weightSlider.minimumValue = 0
+            weightSlider.maximumValue = 440.925
+        }
+    }
+    
     @IBAction func skipPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: K.segueName, sender: self)
     }
@@ -59,7 +81,7 @@ class ViewController: UIViewController {
             let gender = genderField.text!
             let weight = weightSlider.value
             let height = heightSlider.value
-            calculatorLogic.generateEntry(height, weight, name, age, gender)
+            calculatorLogic.generateEntry(height, weight, name, age, gender,imperial.isOn)
             
             }
 
@@ -68,7 +90,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResults"
         {
-            let destinationVc = segue.destination as! TrackingViewController
+            _ = segue.destination as! TrackingViewController
         }
 
     }

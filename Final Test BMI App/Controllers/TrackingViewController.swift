@@ -49,8 +49,8 @@ class TrackingViewController: UIViewController {
                     self.bmis = []
                     for document in querySnapshot!.documents {
                         let data = document.data()
-                        if let entryDate = data["date"] as? String, let entryName = data["name"] as? String,let entryAge = data["age"] as? Int,let entryGender = data["gender"] as? String,let entryWeight = data["weight"] as? Float,let entryHeight = data["height"] as? Float,let entryBmi = data["bmi"] as? Float{
-                            let newEntry = Entry(date: entryDate,name: entryName, age: entryAge, gender: entryGender, weight: entryWeight, height: entryHeight, bmi: entryBmi)
+                        if let entryDate = data["date"] as? String, let entryName = data["name"] as? String,let entryAge = data["age"] as? Int,let entryGender = data["gender"] as? String,let entryWeight = data["weight"] as? Float,let entryHeight = data["height"] as? Float,let entryBmi = data["bmi"] as? Float,let entryImperial = data["imperial"] as? Bool{
+                            let newEntry = Entry(date: entryDate,name: entryName, age: entryAge, gender: entryGender, weight: entryWeight, height: entryHeight, bmi: entryBmi, imperial: entryImperial)
                             self.bmis.append(newEntry)
                             DispatchQueue.main.async {
                                 self.listTableView.reloadData()
@@ -114,6 +114,16 @@ extension TrackingViewController:UITableViewDataSource{
         cell.messageLabel?.text = calculatorLogic.getMessage(bmis[indexPath.row])
         cell.messageLabel?.textColor = calculatorLogic.getTextColor(bmis[indexPath.row])
         cell.contentView.backgroundColor = calculatorLogic.getColor(bmis[indexPath.row])
+        
+        if bmis[indexPath.row].imperial {
+            cell.heightLabel?.text? += "in"
+            cell.weightLabel?.text? += "lb"
+        }
+        else{
+            cell.heightLabel?.text? += "m"
+            cell.weightLabel?.text? += "kg"
+        }
+        
         return cell
     }
     
