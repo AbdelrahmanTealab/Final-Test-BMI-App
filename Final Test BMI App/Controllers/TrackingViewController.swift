@@ -3,12 +3,13 @@
 //  Final Test BMI App
 //
 //  Created by Abdelrahman  Tealab on 2020-12-11.
-//
+//  Student ID: 301164103
 
 import UIKit
 import Firebase
 
 class TrackingViewController: UIViewController {
+    //outlets and variables
     let db = Firestore.firestore()
     var calculatorLogic = CalculatorLogic()
     @IBOutlet weak var listTableView: UITableView!
@@ -18,10 +19,12 @@ class TrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //just cool rounded buttons
         plusButton.layer.cornerRadius = 0.5 * plusButton.bounds.size.width
         plusButton.clipsToBounds = true
         backButton.layer.cornerRadius = 0.5 * backButton.bounds.size.width
         backButton.clipsToBounds = true
+        //assigning delegates to self
         listTableView.dataSource=self
         listTableView.delegate=self
         //registering my custom cell name
@@ -38,7 +41,7 @@ class TrackingViewController: UIViewController {
     }
     
     func loadBmis(){
-        //this is where i load todos from the DB
+        //this is where i load entries from the DB
         //i used addSnapshotListener because it refreshed the function everytime there's an update in the DB
         //when there's an update i call reloadData function in the main thread to avoid crashing
         db.collection(K.collectionName).order(by: "date")
@@ -62,6 +65,7 @@ class TrackingViewController: UIViewController {
         
     }
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        //contextual action for deleting an entry
         let entry = bmis[indexPath.row]
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             self.db.collection(K.collectionName).whereField("date", isEqualTo: entry.date).getDocuments() { (querySnapshot, err) in
@@ -96,7 +100,7 @@ extension TrackingViewController:UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //setting my cell as ListCell as this is my custom cell
         let cell = listTableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! BmiCell
-        //setting the title and dates of the custom cell as well as assigning numbers to the buttons tags so i can access their data easily later
+        //setting the information of the custom cell and changing the background colors as well as the text colors in order to match the bmi level
         cell.dateLabel?.text = bmis[indexPath.row].date
         cell.dateLabel?.textColor = calculatorLogic.getTextColor(bmis[indexPath.row])
         cell.nameLabel?.text = bmis[indexPath.row].name
@@ -114,7 +118,7 @@ extension TrackingViewController:UITableViewDataSource{
         cell.messageLabel?.text = calculatorLogic.getMessage(bmis[indexPath.row])
         cell.messageLabel?.textColor = calculatorLogic.getTextColor(bmis[indexPath.row])
         cell.contentView.backgroundColor = calculatorLogic.getColor(bmis[indexPath.row])
-        
+        //telling whether its imperial or metric
         if bmis[indexPath.row].imperial {
             cell.heightLabel?.text? += "in"
             cell.weightLabel?.text? += "lb"

@@ -3,12 +3,13 @@
 //  Final Test BMI App
 //
 //  Created by Abdelrahman  Tealab on 2020-12-10.
-//
+//  Student ID: 301164103
 
 import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    //outlets and variables
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func unitChanged(_ sender: UISwitch) {
+        //when changing the unit, the max, min, and labels will change accordingly to match the user's choice of imperial/metric
         if !sender.isOn {
             heightUnit = "m"
             weightUnit = "Kg"

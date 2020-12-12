@@ -3,13 +3,13 @@
 //  Final Test BMI App
 //
 //  Created by Abdelrahman  Tealab on 2020-12-11.
-//
+//  Student ID: 301164103
 
 import UIKit
 import Firebase
 
 class AddingViewController: UIViewController {
-
+//outlets and variables
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -30,6 +30,8 @@ class AddingViewController: UIViewController {
         }
     
     func loadDate(){
+        //async function to load the data on the main thread without crashing
+        //when the fields are loaded the user will not be able to change them because they are fixed and will only change the WEIGHT
         db.collection(K.lastCollectionName)
             .addSnapshotListener{ (querySnapshot, err) in
                 if let err = err {
@@ -43,6 +45,7 @@ class AddingViewController: UIViewController {
                                 self.nameField.placeholder = entryName
                                 self.ageField.placeholder = String(entryAge)
                                 self.genderField.placeholder = entryGender
+                                //incase the entry is in imperial, the sliders will change accordingly and set a new max and min values also the labels will change
                                 if(entryImperial){
                                     self.heightUnit = "in"
                                     self.weightUnit = "lb"
