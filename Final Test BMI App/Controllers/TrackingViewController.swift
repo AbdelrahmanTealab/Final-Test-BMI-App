@@ -13,13 +13,15 @@ class TrackingViewController: UIViewController {
     var calculatorLogic = CalculatorLogic()
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var plusButton: UIButton!
-    
+    @IBOutlet weak var backButton: UIButton!
     var bmis:[Entry] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         plusButton.layer.cornerRadius = 0.5 * plusButton.bounds.size.width
         plusButton.clipsToBounds = true
+        backButton.layer.cornerRadius = 0.5 * backButton.bounds.size.width
+        backButton.clipsToBounds = true
         listTableView.dataSource=self
         listTableView.delegate=self
         //registering my custom cell name
@@ -28,15 +30,18 @@ class TrackingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func plusPressed(_ sender: UIButton) {
+    @IBAction func backPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func plusPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: K.segueAddName, sender: self)
     }
     
     func loadBmis(){
         //this is where i load todos from the DB
         //i used addSnapshotListener because it refreshed the function everytime there's an update in the DB
         //when there's an update i call reloadData function in the main thread to avoid crashing
-        db.collection(K.collectionName)
+        db.collection(K.collectionName).order(by: "date")
             .addSnapshotListener{ (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -54,8 +59,26 @@ class TrackingViewController: UIViewController {
                     }
                 }
         }
+        
     }
-
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let entry = bmis[indexPath.row]
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            self.db.collection(K.collectionName).whereField("date", isEqualTo: entry.date).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                  print("Error getting documents: \(err)")
+                } else {
+                  for document in querySnapshot!.documents {
+                    document.reference.delete()
+                  }
+                }
+            }
+            completion(true)
+        }
+        action.image = UIImage(systemName: "trash.slash")
+        action.backgroundColor = .red
+        return action
+    }
 }
 
 //MARK: - extensions
@@ -63,6 +86,11 @@ extension TrackingViewController:UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //returning the number of items in the list to display it as the number of rows
         return bmis.count
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -12,6 +12,8 @@ struct K{
     static let cellIdentifier = "bmiCell"
     static let cellNibName = "BmiCell"
     static let segueName = "toTracking"
+    static let segueAddName =  "toAdding"
     static let collectionName = "bmi"
+    static let lastCollectionName = "lastbmi"
     static let dateFormat = "yyyy/MMM/dd hh:mm"
 }

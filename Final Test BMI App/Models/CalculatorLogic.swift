@@ -22,6 +22,15 @@ struct Database {
                 print("data saved successfully")
             }
         }
+        db.collection(K.lastCollectionName).document("lastbmi").setData(["name":entry.name,"age":entry.age,"gender":entry.gender,"height":entry.height]){(error) in
+            if let e = error{
+                print("error saving data: \(e)")
+            }
+            else{
+                print("data saved successfully")
+            }
+        }
+        
     }
 }
 struct CalculatorLogic{
@@ -34,7 +43,7 @@ struct CalculatorLogic{
         let formatter = DateFormatter()
         var date = ""
         formatter.dateFormat = K.dateFormat
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .short
         formatter.timeStyle = .short
         date = formatter.string(from: Date())
         

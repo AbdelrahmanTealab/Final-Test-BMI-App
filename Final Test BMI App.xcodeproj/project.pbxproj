@@ -17,9 +17,10 @@
 		B65D5D44258338CC0004565D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D3B2583327F0004565D /* Main.storyboard */; };
 		B65D5D5625833AAE0004565D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D5525833AAE0004565D /* Constants.swift */; };
 		B65D5D5925833C1C0004565D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D5825833C1C0004565D /* GoogleService-Info.plist */; };
-		B65D5D5C25833E3A0004565D /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D5B25833E3A0004565D /* TrackingViewController.swift */; };
 		B65D5D64258432C30004565D /* BmiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D62258432C30004565D /* BmiCell.swift */; };
 		B65D5D65258432C30004565D /* BmiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65D5D63258432C30004565D /* BmiCell.xib */; };
+		B65D5D6E25844EF30004565D /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D6D25844EF30004565D /* TrackingViewController.swift */; };
+		B65D5D7125844F330004565D /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65D5D7025844F330004565D /* AddingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +38,10 @@
 		B65D5D40258334290004565D /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		B65D5D5525833AAE0004565D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B65D5D5825833C1C0004565D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B65D5D5B25833E3A0004565D /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		B65D5D62258432C30004565D /* BmiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCell.swift; sourceTree = "<group>"; };
 		B65D5D63258432C30004565D /* BmiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BmiCell.xib; sourceTree = "<group>"; };
+		B65D5D6D25844EF30004565D /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		B65D5D7025844F330004565D /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,9 @@
 		B65D5D35258332100004565D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B65D5D6D25844EF30004565D /* TrackingViewController.swift */,
 				B65D5D36258332690004565D /* ViewController.swift */,
-				B65D5D5B25833E3A0004565D /* TrackingViewController.swift */,
+				B65D5D7025844F330004565D /* AddingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,10 +253,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65D5D5625833AAE0004565D /* Constants.swift in Sources */,
+				B65D5D6E25844EF30004565D /* TrackingViewController.swift in Sources */,
 				B65D5D64258432C30004565D /* BmiCell.swift in Sources */,
+				B65D5D7125844F330004565D /* AddingViewController.swift in Sources */,
 				B65D5D41258334290004565D /* CalculatorLogic.swift in Sources */,
 				B65D5D37258332690004565D /* ViewController.swift in Sources */,
-				B65D5D5C25833E3A0004565D /* TrackingViewController.swift in Sources */,
 				B64693F42583133500C2F8AD /* AppDelegate.swift in Sources */,
 				B64693F62583133500C2F8AD /* SceneDelegate.swift in Sources */,
 			);
